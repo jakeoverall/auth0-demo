@@ -10,6 +10,7 @@ namespace CoreDemo.Controllers
 {
   [ApiController]
   [Route("api/[controller]")]
+   [Authorize]
   public class BlogsController : ControllerBase
   {
     private readonly BlogsService _bs;
@@ -45,7 +46,7 @@ namespace CoreDemo.Controllers
     }
 
     [HttpPost]
-    [Authorize]
+   
     public ActionResult<Blog> Post([FromBody] Blog newBlog)
     {
       try
